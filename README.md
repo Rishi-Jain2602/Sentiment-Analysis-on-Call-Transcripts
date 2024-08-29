@@ -58,7 +58,7 @@ You can open the notebook using Jupyter to follow along with the complete implem
 
 *****
 
-### Tools & Models Used
+## Tools & Models Used
 
 **Sentiment Analysis Model:** We use the [HuggingFace Pretrained Model link](https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student) for sentiment analysis.
 
