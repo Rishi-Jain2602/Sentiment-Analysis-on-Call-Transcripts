@@ -47,6 +47,16 @@ python sentiment.py
 ```
 ****
 
+## Jupyter Notebook Guide
+
+A Jupyter notebook [fiXit.ipynb](https://github.com/Rishi-Jain2602/Sentiment-Analysis-on-Call-Transcripts/blob/main/Jupyter/fixit.ipynb) has been added to this repository, providing a step-by-step implementation guide for the sentiment analysis application. It covers:
+
+1. Performing sentiment analysis
+2. Visualizing results
+
+You can open the notebook using Jupyter to follow along with the complete implementation process.
+
+*****
 
 ### Tools & Models Used
 
