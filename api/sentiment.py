@@ -18,11 +18,12 @@ def analyze_sentiment(parsed_dialogue):
     return result 
 
 
-@app.route('/analyze',methods = ['POST'])
+@app.route('/',methods = ['POST'])
 def get_data():
     data = request.get_json()
-    transcript_content = data.get("transcript","")
-    if transcript_content:
+    print(data)
+    if 'transcript' in data:
+        transcript_content = data['transcript']
         parsed_dialogue = parse_transcript(transcript_content)
         sentiment_result = analyze_sentiment(parsed_dialogue)
         return jsonify(sentiment_result)

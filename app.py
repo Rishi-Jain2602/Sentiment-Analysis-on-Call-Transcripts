@@ -19,20 +19,26 @@ authenticator = stauth.Authenticate(
 
 name, authentication_status, username = authenticator.login( "main")
 
+
 if authentication_status:
     st.title("Welcome to Sentiment Analysis on Call Transcripts")
 
     # Upload Transcript File
     uploaded_file = st.file_uploader("Upload a Transcript", type=["txt"])
     if uploaded_file is not None:
-        transcript = uploaded_file.read()
+        transcript = uploaded_file.read().decode('utf-8')
 
         if st.button("Analyze Sentiment"):
-            response = requests.post("http://127.0.0.1:5000/",json = {"transcript",transcript})
+            response = requests.post("http://127.0.0.1:5000/",json = {"transcript":transcript})
+            print(response)
             if response.status_code == 200:
                 sentiment_result = response.json()
                 st.write("Sentiment Analysis Result:")
-                st.write(sentiment_result)
+                for res in sentiment_result:
+                    st.write(f"**Speaker**: {res['speaker']}")
+                    st.write(f"**Text**: {res['text']}")
+                    st.write(f"**Sentiment**: {res['score']['label']} (Score: {res['score']['score']:.2f})")
+                    st.write("---")
                 fig1, ax1 = plt.subplots()
 
                 sentiments = [res['score']['label'] for res in sentiment_result]

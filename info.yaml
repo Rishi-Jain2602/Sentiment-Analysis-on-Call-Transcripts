@@ -1,7 +1,7 @@
 credentials:
   usernames:
-    abcd:
-      name: abcd
+    johndoe:
+      name: abc
       password: $2b$12$l9wqK00OHlSvSDoVPpnzveGjCaOELJDo4GGIuwsY8RnXjE0T4B7YK
     efgh:
       name: efgh
